@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-void: #050D1A;
+  --color-bg-deep: #080F1E;
+  --color-bg-base: #0B1628;
+  --color-bg-surface: #0F1E38;
+  --color-bg-card: #122342;
+  --color-bg-raised: #172B50;
+  --color-bg-hover: #1C335D;
+  
+  --color-bd-subtle: #152038;
+  --color-bd-default: #1E3158;
+  --color-bd-strong: #2A4878;
+  --color-bd-active: #3A62A0;
+
+  --color-sky-base: #4AB8E8; /* renamed to sky-base to avoid conflict with default sky */
+  --color-sky-light: #74CFF2;
+  --color-sky-dim: #2E90C0;
+  --color-navy: #1B3A8C;
+  --color-navy-light: #2550B8;
+
+  --color-t1: #E8F3FC;
+  --color-t2: #8AAFC8;
+  --color-t3: #4E6E88;
+  --color-t-inv: #05101E;
+
+  --font-display: var(--font-montserrat);
+  --font-body: var(--font-poppins);
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  color: var(--color-t1);
+  font-family: var(--font-body);
+}
+
+@utility flow-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-sky-dim) 25%, var(--color-sky-base) 60%, var(--color-sky-light) 80%, transparent 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -70%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+    animation: shimmer 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  to { left: 160%; }
+}
+
+@utility glassmorphism {
+  background: rgba(2, 11, 24, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(79, 195, 247, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@utility blue-glow {
+  box-shadow: 0 0 20px rgba(79, 195, 247, 0.4), 0 0 40px rgba(79, 195, 247, 0.2);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(79, 195, 247, 0.5), 0 0 20px rgba(79, 195, 247, 0.3);
+}
+
+@utility cinematic-bg {
+  background-color: #020B18;
+}
