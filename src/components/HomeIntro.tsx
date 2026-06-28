@@ -1,54 +1,200 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+
+const PROCESS_CARDS = [
+  {
+    num: '01',
+    title: 'Discover & Validate',
+    desc: "We dig deep — researching where the maritime sector's most critical technology, policy, and market gaps lie, and validating where UMINATO's intervention will move the needle most.",
+  },
+  {
+    num: '02',
+    title: 'Build & Venture',
+    desc: 'We build — proprietary tools, technology platforms, and indices, then structure the ventures and partnerships that take them from the studio into ports, waterways, and shipping lanes.',
+  },
+  {
+    num: '03',
+    title: 'Scale & Sustain',
+    desc: "We scale — connecting proven solutions to government programmes, multilateral funding, and industry partners to deliver lasting, measurable impact — from India's maritime ecosystem to port economies worldwide.",
+  },
+  {
+    num: '04',
+    title: 'Advise. Deploy. Transform.',
+    desc: 'UMINATO works directly with ports, shipping companies, waterway operators, coastal authorities, and maritime institutions — evaluating readiness, identifying gaps, and mapping clear pathways forward.',
+  },
+];
 
 export default function HomeIntro() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden bg-transparent border-t border-white/5">
-      <div className="max-w-[1220px] mx-auto px-7 relative z-10">
-        
-        {/* Corporate Split Layout */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-          <div className="md:w-1/2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-8 bg-sky-base"></div>
-              <p className="font-display text-[12px] font-bold tracking-[0.2em] text-sky-base uppercase">
-                Introduction
-              </p>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-t1 leading-[1.1] tracking-tight">
-              Accelerating <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">Maritime</span> <br className="hidden md:block" />
+    <section
+      className="relative overflow-hidden border-t border-bd-subtle"
+      style={{ background: 'linear-gradient(180deg, #080F1E 0%, #0B1628 100%)' }}
+    >
+      {/* ══════════════════════════════════
+          BLOCK 1 — Introduction copy
+      ══════════════════════════════════ */}
+      <div className="max-w-[1220px] mx-auto px-8 md:px-12" style={{ paddingTop: '96px', paddingBottom: '80px' }}>
+
+        {/* Section label — sits ABOVE the grid, full width */}
+        <div className="flex items-center gap-3 mb-12">
+          <div style={{ width: '28px', height: '1px', background: '#4AB8E8', flexShrink: 0 }} />
+          <span
+            className="font-display font-bold uppercase"
+            style={{ fontSize: '0.67rem', letterSpacing: '0.26em', color: '#4AB8E8' }}
+          >
+            Introduction
+          </span>
+        </div>
+
+        {/* Two-column grid — label is OUTSIDE so columns align naturally */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0"
+          style={{ alignItems: 'center' }}
+        >
+          {/* ── LEFT: Heading ── */}
+          <div style={{ paddingRight: '64px' }}>
+            <h2
+              className="font-display font-bold text-t1 leading-[1.06] tracking-tight"
+              style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}
+            >
+              Accelerating
+              <br />
+              <span style={{ color: '#4AB8E8' }}>Maritime</span>
+              <br />
               Transformation
             </h2>
           </div>
-          
-          <div className="md:w-1/2 md:pt-14">
-            <p className="text-lg md:text-xl text-t2 font-body leading-relaxed pl-0 md:pl-10 border-l-0 md:border-l border-white/10">
-              UMINATO is a maritime venture studio focused on researching, building, and scaling technologies, ventures, and partnerships that address the future of maritime systems.
+
+          {/* ── RIGHT: Body paragraphs ── */}
+          <div
+            className="mt-10 lg:mt-0"
+            style={{
+              paddingLeft: '56px',
+              borderLeft: '1px solid rgba(74,184,232,0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px',
+            }}
+          >
+            <p className="font-body text-t2 leading-[1.8]" style={{ fontSize: '0.9375rem' }}>
+              India's ports, waterways, and coastlines are at the centre of one of the world's most
+              ambitious maritime transformations — Harit Sagar, Harit Nauka, Sagarmala, Maritime
+              Amrit Kaal Vision 2047. The policies are in place. The technology and measurement
+              infrastructure to deliver them is still being built.
+            </p>
+            <p className="font-body text-t2 leading-[1.8]" style={{ fontSize: '0.9375rem' }}>
+              UMINATO researches what the sector needs, builds the tools to measure and accelerate
+              progress, and develops the ventures that make India's ports, port ecosystems,
+              waterways, and coastlines smarter, greener, climate-resilient, and genuinely
+              future-ready.
+            </p>
+            <p className="font-body text-t2 leading-[1.8]" style={{ fontSize: '0.9375rem' }}>
+              The pressure is the same worldwide. IMO's net-zero targets are reshaping every
+              shipping lane. The EU's port decarbonisation mandates are rewriting terminal
+              investment. Climate shocks are redrawing coastlines from the Bay of Bengal to the
+              Gulf of Mexico. UMINATO exists to change that.
             </p>
           </div>
         </div>
-        
-        {/* Corporate Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { num: "01", title: "Discover & Validate", desc: "Identifying high-impact opportunities and proving their viability in the maritime sector." },
-            { num: "02", title: "Build & Venture", desc: "Developing scalable technologies and forming strategic ventures to solve critical challenges." },
-            { num: "03", title: "Scale & Sustain", desc: "Driving long-term growth and resilience through continuous innovation and partnerships." }
-          ].map((item, i) => (
-            <div key={i} className="group relative p-8 md:p-10 rounded-xl bg-white/[0.02] border border-white/5 hover:border-sky-base/30 transition-all duration-300 hover:bg-white/[0.04]">
-              <div className="flex justify-between items-start mb-16">
-                <span className="font-display text-4xl font-light text-sky-base/30 group-hover:text-sky-base transition-colors duration-300">
+      </div>
+
+      {/* ══════════════════════════════════
+          BLOCK 2 — "How We Work" divider
+      ══════════════════════════════════ */}
+      <div
+        className="max-w-[1220px] mx-auto px-8 md:px-12"
+        style={{ paddingBottom: '48px' }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(74,184,232,0.15))' }} />
+          <span
+            className="font-display font-bold uppercase whitespace-nowrap"
+            style={{ fontSize: '0.62rem', letterSpacing: '0.28em', color: '#4E6E88' }}
+          >
+            How We Work
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, rgba(74,184,232,0.15), transparent)' }} />
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════
+          BLOCK 3 — Process cards 2×2
+      ══════════════════════════════════ */}
+      <div
+        className="max-w-[1220px] mx-auto px-8 md:px-12"
+        style={{ paddingBottom: '96px' }}
+      >
+        {/* 2×2 grid using gap-px + wrapper background for visible inner borders */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '1px',
+            background: 'rgba(74,184,232,0.12)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            border: '1px solid rgba(74,184,232,0.12)',
+          }}
+        >
+          {PROCESS_CARDS.map((item, i) => (
+            <div
+              key={i}
+              className="group relative"
+              style={{
+                background: '#0B1628',
+                padding: '44px 40px 40px',
+                transition: 'background 0.25s ease',
+              }}
+            >
+              {/* Hover background — simulated via overlay since no JS */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: '#0F1E38', zIndex: 0 }}
+              />
+
+              {/* Top accent line on hover */}
+              <div
+                className="absolute top-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  height: '2px',
+                  background: 'linear-gradient(90deg, #4AB8E8 0%, transparent 70%)',
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Content above overlay */}
+              <div className="relative" style={{ zIndex: 2 }}>
+                {/* Number */}
+                <div
+                  className="font-display font-extralight mb-6 select-none"
+                  style={{
+                    fontSize: '2.25rem',
+                    lineHeight: 1,
+                    color: 'rgba(74,184,232,0.2)',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
                   {item.num}
-                </span>
-                <ArrowUpRight className="text-t3 group-hover:text-sky-base transition-all duration-300 w-6 h-6 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0" />
+                </div>
+
+                {/* Title */}
+                <h3
+                  className="font-display font-bold text-t1 mb-4"
+                  style={{ fontSize: '1.05rem', letterSpacing: '-0.01em', lineHeight: 1.3 }}
+                >
+                  {item.title}
+                </h3>
+
+                {/* Desc */}
+                <p
+                  className="font-body text-t3 leading-[1.75]"
+                  style={{ fontSize: '0.875rem' }}
+                >
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="font-display text-xl font-bold text-t1 mb-4">{item.title}</h3>
-              <p className="text-t3 text-sm md:text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
-        
       </div>
     </section>
   );

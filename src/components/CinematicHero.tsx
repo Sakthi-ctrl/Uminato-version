@@ -4,58 +4,199 @@ import gsap from "gsap";
 
 export default function CinematicHero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".hero-content",
-        { autoAlpha: 0, y: 50 },
-        { autoAlpha: 1, y: 0, duration: 1.5, ease: "power3.out", stagger: 0.2 }
-      );
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+      // 1. UMINATO enters — large, bold, cinematic
+      tl.fromTo(
+        ".hero-uminato",
+        { autoAlpha: 0, y: 100, scale: 0.88 },
+        { autoAlpha: 1, y: 0, scale: 1, duration: 2, ease: "power4.out" }
+      )
+        // 2. Studio line floats in AFTER UMINATO has settled
+        .fromTo(
+          ".hero-studio",
+          { autoAlpha: 0, y: 24 },
+          { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out" },
+          "+=0.05"
+        )
+        // 3. Divider line draws across
+        .fromTo(
+          ".hero-divider",
+          { scaleX: 0 },
+          { scaleX: 1, duration: 0.8, ease: "power2.out" },
+          "-=0.6"
+        )
+        // 4. Tagline
+        .fromTo(
+          ".hero-tagline",
+          { autoAlpha: 0, y: 16 },
+          { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" },
+          "-=0.4"
+        )
+        // 5. Sector bullets
+        .fromTo(
+          ".hero-sectors",
+          { autoAlpha: 0, y: 12 },
+          { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" },
+          "-=0.5"
+        )
+        // 6. Span text
+        .fromTo(
+          ".hero-span",
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 0.8 },
+          "-=0.4"
+        )
+        // 7. CTA buttons
+        .fromTo(
+          ".hero-cta",
+          { autoAlpha: 0, y: 10 },
+          { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out", stagger: 0.12 },
+          "-=0.3"
+        );
     }, containerRef);
-    
+
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full relative cinematic-bg min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
-      
-      {/* Ambient Particles */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-sky-base/10 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-sky-light/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <div
+      ref={containerRef}
+      className="w-full relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden"
+    >
+      {/* ── Video Background ── */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        aria-hidden="true"
+      >
+        <source
+          src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4"
+          type="video/mp4"
+        />
+        {/* Fallback for browsers that don't support external video */}
+      </video>
+
+      {/* ── Dark Blue Gradient Overlay ── */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(2,11,24,0.78) 0%, rgba(4,13,31,0.72) 50%, rgba(2,11,24,0.92) 100%)",
+        }}
+      />
+
+      {/* ── Ambient Blue Glow ── */}
+      <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            width: "900px",
+            height: "450px",
+            background: "radial-gradient(ellipse, rgba(74,184,232,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0"
+          style={{
+            height: "200px",
+            background: "linear-gradient(to top, rgba(2,11,24,0.9), transparent)",
+          }}
+        />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center hero-content">
-        <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-t1 mb-8 hero-content uppercase text-center w-full md:whitespace-nowrap leading-tight">
-          Maritime Venture Studio
+      {/* ── Content ── */}
+      <div className="relative z-10 flex flex-col items-center w-full max-w-6xl mx-auto pt-24 pb-16">
+
+        {/* UMINATO — enters first, cinematic */}
+        <h1
+          className="hero-uminato font-display font-extrabold tracking-tight leading-none mb-4 uppercase"
+          style={{
+            opacity: 0,
+            fontSize: "clamp(4rem, 14vw, 14rem)",
+            background: "linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.85) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow: "none",
+            filter: "drop-shadow(0 0 60px rgba(74,184,232,0.25))",
+          }}
+        >
+          UMINATO
         </h1>
-        
-        <p className="text-lg md:text-2xl text-t2 font-body max-w-3xl leading-relaxed mb-16 hero-content">
-          Building Maritime Systems Green, Autonomous, Resilient, and Future-Ready Talents.
+
+        {/* Studio line — floats in AFTER UMINATO */}
+        <p
+          className="hero-studio font-display font-bold uppercase tracking-[0.3em] text-sky-base"
+          style={{ opacity: 0, fontSize: "clamp(0.65rem, 2vw, 1.25rem)", letterSpacing: "0.35em" }}
+        >
+          Maritime Innovation and Venture Studio
         </p>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 mb-16 max-w-5xl w-full text-sm md:text-base text-t3 font-body text-left mx-auto hero-content">
+
+        {/* Divider */}
+        <div
+          className="hero-divider mx-auto my-6 origin-left"
+          style={{
+            height: "1px",
+            width: "120px",
+            background: "linear-gradient(90deg, transparent, #4AB8E8, transparent)",
+            transform: "scaleX(0)",
+          }}
+        />
+
+        {/* Tagline */}
+        <p
+          className="hero-tagline font-body text-t2 leading-relaxed max-w-3xl mb-10"
+          style={{ opacity: 0, fontSize: "clamp(0.95rem, 2vw, 1.2rem)" }}
+        >
+          Building Green, Autonomous and Resilient Maritime Systems —{" "}
+          and Future-Ready Maritime Experts
+        </p>
+
+        {/* Sector bullets */}
+        <div
+          className="hero-sectors grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 mb-6 max-w-4xl w-full text-sm text-t3 font-body text-left mx-auto"
+          style={{ opacity: 0 }}
+        >
           {[
-            "Across Ports & Terminals",
+            "Ports & Terminals",
             "Shipping & Maritime Transport",
-            "Inland Waterways",
-            "Coastal Communities & Ecosystems",
+            "Inland Waterways & River Systems",
+            "Coastal & Island Communities (SIDS)",
             "Shipbuilding & Allied Industries",
-            "Maritime Defence"
+            "Maritime Defence",
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3 justify-center sm:justify-start">
-              <div className="w-1.5 h-1.5 rounded-full bg-sky-base flex-shrink-0"></div>
+            <div
+              key={idx}
+              className="flex items-center gap-2.5 justify-center sm:justify-start"
+            >
+              <div className="w-1.5 h-1.5 rounded-full bg-sky-base flex-shrink-0" />
               <span>{item}</span>
             </div>
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 hero-content">
-          <button className="bg-sky-base text-t-inv px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-sky-light hover:-translate-y-[1px] hover:shadow-[0_0_28px_rgba(74,184,232,0.22)] transition-all duration-200">
+        {/* Spanning note */}
+        <p
+          className="hero-span font-body text-t3 italic text-xs md:text-sm max-w-2xl text-center mb-12"
+          style={{ opacity: 0 }}
+        >
+          Spanning the Blue Economy — with climate resilience and disaster risk reduction
+          woven across every sector.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="hero-cta bg-sky-base text-t-inv px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-sky-light hover:-translate-y-[1px] hover:shadow-[0_0_28px_rgba(74,184,232,0.28)] transition-all duration-200" style={{ opacity: 0 }}>
             Explore Projects
           </button>
-          <button className="bg-transparent border border-sky-base text-sky-base px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-[rgba(74,184,232,0.1)] hover:shadow-[0_0_16px_rgba(74,184,232,0.15)] transition-all duration-200">
+          <button className="hero-cta bg-transparent border border-sky-base text-sky-base px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-[rgba(74,184,232,0.1)] hover:shadow-[0_0_16px_rgba(74,184,232,0.15)] transition-all duration-200" style={{ opacity: 0 }}>
             Partner With Us
           </button>
         </div>

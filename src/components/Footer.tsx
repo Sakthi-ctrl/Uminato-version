@@ -36,10 +36,16 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
           <div className="md:col-span-5 lg:col-span-4">
             <div className="relative w-36 h-12 mb-4">
-              <Image src="/logo.png" alt="UMINATO Logo" fill className="object-contain object-left brightness-0 invert" />
+              <Image
+                src="/logo.png"
+                alt="UMINATO Logo"
+                fill
+                sizes="144px"
+                className="object-contain object-left"
+              />
             </div>
-            <p className="font-display text-[10px] font-bold tracking-[0.25em] text-sky-base uppercase mb-6">Maritime Venture Studio</p>
-            <p className="text-[13px] text-t2 leading-relaxed mb-6 pe-4">Building Maritime Systems Green, Autonomous, Resilient, and Future-Ready Talents.</p>
+            <p className="font-display text-[10px] font-bold tracking-[0.25em] text-sky-base uppercase mb-6">Maritime Innovation &amp; Venture Studio</p>
+            <p className="text-[13px] text-t2 leading-relaxed mb-6 pe-4">Building Maritime Systems Green, Autonomous, Resilient, and Future-Ready Maritime Experts.</p>
             <div className="flex gap-2">
               <span className="text-[10px] uppercase font-semibold text-t3 border border-bd-subtle px-2.5 py-1.5 rounded bg-bg-surface">Discover</span>
               <span className="text-[10px] uppercase font-semibold text-t3 border border-bd-subtle px-2.5 py-1.5 rounded bg-bg-surface">Build</span>
