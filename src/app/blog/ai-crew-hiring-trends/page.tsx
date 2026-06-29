@@ -13,15 +13,9 @@ import {
   Users, 
   Shield, 
   Award, 
-  Database, 
   Activity, 
   Check, 
   BookOpen, 
-  Twitter, 
-  Linkedin, 
-  Link2,
-  Lock,
-  Zap,
   Star
 } from 'lucide-react';
 
