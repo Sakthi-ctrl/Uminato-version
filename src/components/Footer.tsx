@@ -58,7 +58,6 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-2">Studio</h4>
               <Link href="/about" className="text-t2 hover:text-sky-base transition-colors">About Us</Link>
               <Link href="/projects" className="text-t2 hover:text-sky-base transition-colors">Featured Projects</Link>
-              <Link href="/team" className="text-t2 hover:text-sky-base transition-colors">Our Team</Link>
               <Link href="/careers" className="text-t2 hover:text-sky-base transition-colors">Careers</Link>
             </div>
             <div className="flex flex-col gap-4">

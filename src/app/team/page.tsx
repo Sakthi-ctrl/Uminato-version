@@ -4,22 +4,28 @@ import Footer from '@/components/Footer';
 
 const FOUNDERS = [
   {
+    name: "Capt. Indresh Kharbanda",
+    role: "Co-Founder",
+    expertise: "Maritime Operations | Ship Command | Sector Credibility",
+    initials: "IK",
+    image: "/Image 03.jpeg",
+    bio: "A decorated veteran ship captain bringing decades of lived experience from the deck up — giving UMINATO its operational credibility and its human compass."
+  },
+  {
     name: "Umesh Sahdev",
     role: "Co-Founder",
     expertise: "Climate Change Mitigation & Decarbonisation",
     initials: "US",
+    image: "/Image 01.jpeg",
+    bio: "A veteran across multiple industries and a pioneer of climate change mitigation and decarbonisation — Umesh saw the maritime sector's urgent need clearly and built UMINATO to answer it."
   },
   {
     name: "Ram Shankar",
     role: "Co-Founder",
     expertise: "Industry 4.0 | AI & Robotics | Intelligent Systems",
     initials: "RS",
-  },
-  {
-    name: "Capt. Indresh Kharbanda",
-    role: "Co-Founder",
-    expertise: "Maritime Operations | Ship Command | Sector Credibility",
-    initials: "IK",
+    image: "/image 02.jpg",
+    bio: "Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems."
   },
 ];
 
@@ -66,32 +72,25 @@ export default function TeamPage() {
                   key={idx}
                   className="bg-bg-card border border-bd-subtle rounded-xl overflow-hidden hover:border-sky-base transition-colors duration-300 group"
                 >
-                  {/* Photo placeholder */}
-                  <div
-                    className="h-72 w-full flex flex-col items-center justify-center gap-4"
-                    style={{
-                      background: "linear-gradient(135deg, #0F1E38 0%, #172B50 50%, #0F1E38 100%)",
-                    }}
-                  >
-                    {/* Avatar initials circle */}
-                    <div
-                      className="w-28 h-28 rounded-full flex items-center justify-center text-3xl font-bold text-sky-base border-2 border-sky-base/30 group-hover:border-sky-base transition-colors duration-300"
-                      style={{ background: "rgba(74,184,232,0.08)" }}
-                    >
-                      {founder.initials}
-                    </div>
-                    <p className="text-t3 text-xs font-body italic">Photo coming soon</p>
+                  {/* Photo */}
+                  <div className="h-64 w-full relative overflow-hidden bg-bg-raised">
+                    <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/40 to-transparent"></div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-6 relative z-10 -mt-10">
                     <h3 className="font-display text-xl font-bold text-t1 mb-1">
                       {founder.name}
                     </h3>
-                    <p className="text-sm text-sky-base font-body font-semibold mb-3">
+                    <p className="text-[11px] text-sky-base font-body font-bold uppercase tracking-wider mb-3">
                       {founder.role}
                     </p>
-                    <p className="text-xs text-t3 font-body leading-relaxed">
+                    <p className="text-xs text-t3 font-body leading-relaxed mb-6">
                       {founder.expertise}
+                    </p>
+                    <div className="h-[1px] w-full bg-bd-subtle mb-6"></div>
+                    <p className="text-[13px] text-t2 font-body leading-relaxed">
+                      {founder.bio}
                     </p>
                   </div>
                 </div>

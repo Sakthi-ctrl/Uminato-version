@@ -63,7 +63,7 @@ export default function CinematicHero() {
         aria-hidden="true"
       >
         <source
-          src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4"
+          src="/AI_technology_Cargo_Container_Ship_202606300123.mp4"
           type="video/mp4"
         />
         {/* Fallback for browsers that don't support external video */}

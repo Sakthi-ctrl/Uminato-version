@@ -23,6 +23,7 @@ export default function Header() {
           <Link href="/about" className="hover:text-sky-base transition-colors">ABOUT</Link>
           <Link href="/projects" className="hover:text-sky-base transition-colors">PROJECTS</Link>
           <Link href="/podcast" className="hover:text-sky-base transition-colors">PODCAST</Link>
+          <Link href="/blog" className="hover:text-sky-base transition-colors">BLOG</Link>
           <Link href="/contact" className="hover:text-sky-base transition-colors">CONTACT</Link>
         </nav>
       </div>

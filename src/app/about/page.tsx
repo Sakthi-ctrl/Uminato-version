@@ -6,6 +6,13 @@ import { Anchor, Ship, Waves, Palmtree, Wrench, Shield } from 'lucide-react';
 
 const FOUNDERS = [
   {
+    photo: '/Image 03.jpeg',
+    name: 'Capt. Indresh Kharbanda',
+    role: 'Co-Founder',
+    expertise: 'Maritime Operations | Ship Command | Sector Credibility',
+    bio: 'A decorated veteran ship captain bringing decades of lived experience from the deck up — giving UMINATO its operational credibility and its human compass.',
+  },
+  {
     photo: '/Image 01.jpeg',
     name: 'Umesh Sahdev',
     role: 'Co-Founder',
@@ -18,13 +25,6 @@ const FOUNDERS = [
     role: 'Co-Founder',
     expertise: 'Industry 4.0 | AI & Robotics | Intelligent Systems',
     bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
-  },
-  {
-    photo: '/Image 03.jpeg',
-    name: 'Capt. Indresh Kharbanda',
-    role: 'Co-Founder',
-    expertise: 'Maritime Operations | Ship Command | Sector Credibility',
-    bio: 'A decorated veteran ship captain bringing decades of lived experience from the deck up — giving UMINATO its operational credibility and its human compass.',
   },
 ];
 

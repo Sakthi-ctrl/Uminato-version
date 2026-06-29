@@ -5,11 +5,8 @@ import Footer from '@/components/Footer';
 
 export default function BlogPage() {
   const articles = [
-    { title: "AI Trends in Maritime Crew Recruitment for 2027", date: "June 2026", category: "Talent & Workforce", href: "/blog/ai-crew-hiring-trends" },
-    { title: "The Future of Autonomous Maritime Systems", date: "June 2026", category: "Autonomy", href: "/blog/future-autonomous-maritime" },
-    { title: "Green Ports & Sustainability", date: "May 2026", category: "Decarbonisation", href: "#" },
-    { title: "Climate Resilience in Shipping Networks", date: "May 2026", category: "Resilience", href: "#" },
-    { title: "Digital Ports and Telematics", date: "March 2026", category: "Digital Twins", href: "#" }
+    { title: "AI Trends in Maritime Crew Recruitment for 2027", date: "June 2026", category: "Talent & Workforce", href: "/blog/ai-crew-hiring-trends", image: "/assets/blog/crew-insight.png" },
+    { title: "The Future of Autonomous Maritime Systems", date: "June 2026", category: "Autonomy", href: "/blog/future-autonomous-maritime", image: "/assets/blog/featured-insight.png" }
   ];
 
   return (
@@ -38,7 +35,7 @@ export default function BlogPage() {
             <Link href="/blog/future-autonomous-maritime" className="group bg-bg-card border border-bd-subtle rounded-2xl overflow-hidden hover:border-sky-base hover:shadow-[0_0_30px_rgba(74,184,232,0.1)] transition-all duration-500 cursor-pointer flex flex-col md:flex-row">
               <div className="md:w-1/2 h-64 md:h-auto bg-bg-raised relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-sky-dim/20 to-transparent group-hover:scale-105 transition-transform duration-700"></div>
-                {/* Image Placeholder */}
+                <img src="/assets/blog/featured-insight.png" alt="Featured Article" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
@@ -63,14 +60,14 @@ export default function BlogPage() {
         <section className="py-16 pb-32">
           <div className="max-w-[1220px] mx-auto px-7">
             <p className="font-display text-[11px] font-bold tracking-[0.2em] text-t3 uppercase mb-6">Latest Posts</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {articles.map((article, idx) => (
-                <Link key={idx} href={article.href} className="group bg-bg-card border border-bd-subtle rounded-xl overflow-hidden hover:border-bd-default transition-all duration-300 cursor-pointer flex flex-col">
-                  <div className="h-48 bg-bg-raised relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-bg-surface to-transparent group-hover:opacity-50 transition-opacity"></div>
+                <Link key={idx} href={article.href} className="group bg-bg-card border border-bd-subtle rounded-2xl overflow-hidden hover:border-sky-base hover:shadow-[0_0_20px_rgba(74,184,232,0.08)] transition-all duration-500 cursor-pointer flex flex-col">
+                  <div className="h-60 bg-bg-raised relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-bg-surface to-transparent group-hover:opacity-50 transition-opacity z-10"></div>
+                    <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="p-6 flex flex-col flex-grow">
+                  <div className="p-8 flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-[10px] uppercase tracking-wider text-sky-base font-semibold">{article.category}</span>
                       <span className="w-1 h-1 rounded-full bg-bd-strong"></span>
@@ -87,11 +84,7 @@ export default function BlogPage() {
               ))}
             </div>
             
-            <div className="mt-16 text-center">
-              <button className="bg-bg-raised border border-bd-default text-t2 px-8 py-3.5 rounded-md font-body font-medium text-[14px] hover:bg-bg-hover hover:text-t1 transition-all">
-                Load More Articles
-              </button>
-            </div>
+
           </div>
         </section>
 
