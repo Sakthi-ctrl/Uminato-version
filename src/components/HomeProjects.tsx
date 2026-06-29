@@ -2,10 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 
 const STATUS_COLORS: Record<string, string> = {
-  'In Development':          '#1B6F2E',
-  'Research & Pilot':        '#7B4A0E',
-  'Research & Pilot Programs':'#7B4A0E',
-  'Program Development':     '#1A3D80',
+  'In Development': '#1B6F2E',
+  'Research & Pilot': '#7B4A0E',
+  'Research & Pilot Programs': '#7B4A0E',
+  'Program Development': '#1A3D80',
 };
 
 const PROJECTS = [
@@ -16,7 +16,7 @@ const PROJECTS = [
     subtitle: 'Smart, Green, Resilient and Climate-Ready Performance — Objectively Measured',
     desc: 'MAPMI benchmarks ports, terminals, and coastal ecosystems across decarbonisation, digitisation, robotisation, and climate resilience — drawing exclusively on objective data extracted through system integrations, APIs, and remote sensing, with minimal human subjectivity.',
     focus: ['Decarbonisation', 'Digitisation', 'Robotisation', 'Climate Resilience', 'Remote Sensing'],
-    status: 'In Development',
+    status: 'Research & Development',
   },
   {
     id: '02',
@@ -25,7 +25,7 @@ const PROJECTS = [
     subtitle: 'The AI Co-Captain for Smarter, Safer Ship Operations',
     desc: 'C2OS is an AI-powered command intelligence platform that transforms how vessels are operated — shifting from fragmented, reactive systems to a unified autonomous brain that predicts fatigue risks, ensures IMO/STCW compliance, and optimises crew deployment.',
     focus: ['AI Command Intelligence', 'STCW Compliance', 'Fatigue Risk', 'Vessel IoT'],
-    status: 'Research & Pilot',
+    status: 'Research & Development',
   },
   {
     id: '03',
@@ -34,7 +34,7 @@ const PROJECTS = [
     subtitle: 'Smarter Hiring Across the Full Maritime Workforce',
     desc: "NAVIK applies AI to maritime's most persistent challenge — finding, matching, and retaining the right talent. Covering seafarers to shore-based professionals, NAVIK goes beyond CV matching to assess competency and predict retention.",
     focus: ['AI Screening', 'Competency Assessment', 'Skills Intelligence', 'Talent Matching'],
-    status: 'Research & Pilot Programs',
+    status: 'MVP Validation',
   },
   {
     id: '04',
@@ -43,7 +43,7 @@ const PROJECTS = [
     subtitle: 'Leading the Transition to Smarter, Greener, and More Resilient Ports',
     desc: 'A practitioner-led program for port executives, mid-level managers, and government officials navigating decarbonisation and digitalisation — delivered in hybrid format across multiple certification levels.',
     focus: ['Green Ports', 'Smart Ports', 'Transformation Leadership', 'Future Skills'],
-    status: 'Program Development',
+    status: 'Research & Development',
   },
 ];
 
@@ -73,7 +73,7 @@ export default function HomeProjects() {
           >
             View All Projects
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.625 7H11.375M11.375 7L7.875 3.5M11.375 7L7.875 10.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2.625 7H11.375M11.375 7L7.875 3.5M11.375 7L7.875 10.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </div>
