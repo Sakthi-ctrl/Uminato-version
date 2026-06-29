@@ -21,10 +21,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8 text-[13.5px] font-medium text-t2">
           <Link href="/" className="hover:text-sky-base transition-colors">HOME</Link>
           <Link href="/about" className="hover:text-sky-base transition-colors">ABOUT</Link>
-          <Link href="/team" className="hover:text-sky-base transition-colors">TEAM</Link>
           <Link href="/projects" className="hover:text-sky-base transition-colors">PROJECTS</Link>
           <Link href="/podcast" className="hover:text-sky-base transition-colors">PODCAST</Link>
-          <Link href="/blog" className="hover:text-sky-base transition-colors">BLOG</Link>
           <Link href="/contact" className="hover:text-sky-base transition-colors">CONTACT</Link>
         </nav>
       </div>

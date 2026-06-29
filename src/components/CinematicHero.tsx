@@ -36,21 +36,7 @@ export default function CinematicHero() {
           { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" },
           "-=0.4"
         )
-        // 5. Sector bullets
-        .fromTo(
-          ".hero-sectors",
-          { autoAlpha: 0, y: 12 },
-          { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" },
-          "-=0.5"
-        )
-        // 6. Span text
-        .fromTo(
-          ".hero-span",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.8 },
-          "-=0.4"
-        )
-        // 7. CTA buttons
+        // 5. CTA buttons
         .fromTo(
           ".hero-cta",
           { autoAlpha: 0, y: 10 },
@@ -157,38 +143,6 @@ export default function CinematicHero() {
         >
           Building Green, Autonomous and Resilient Maritime Systems —{" "}
           and Future-Ready Maritime Experts
-        </p>
-
-        {/* Sector bullets */}
-        <div
-          className="hero-sectors grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 mb-6 max-w-4xl w-full text-sm text-t3 font-body text-left mx-auto"
-          style={{ opacity: 0 }}
-        >
-          {[
-            "Ports & Terminals",
-            "Shipping & Maritime Transport",
-            "Inland Waterways & River Systems",
-            "Coastal & Island Communities (SIDS)",
-            "Shipbuilding & Allied Industries",
-            "Maritime Defence",
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-2.5 justify-center sm:justify-start"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-sky-base flex-shrink-0" />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Spanning note */}
-        <p
-          className="hero-span font-body text-t3 italic text-xs md:text-sm max-w-2xl text-center mb-12"
-          style={{ opacity: 0 }}
-        >
-          Spanning the Blue Economy — with climate resilience and disaster risk reduction
-          woven across every sector.
         </p>
 
         {/* CTA Buttons */}

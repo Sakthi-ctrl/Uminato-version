@@ -1,15 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function BlogPage() {
   const articles = [
-    { title: "Autonomous Systems", date: "June 2026", category: "Autonomy" },
-    { title: "Green Ports", date: "May 2026", category: "Decarbonisation" },
-    { title: "Climate Resilience", date: "May 2026", category: "Resilience" },
-    { title: "Maritime Workforce", date: "April 2026", category: "Workforce" },
-    { title: "AI in Shipping", date: "April 2026", category: "Artificial Intelligence" },
-    { title: "Digital Ports", date: "March 2026", category: "Digital Twins" }
+    { title: "AI Trends in Maritime Crew Recruitment for 2027", date: "June 2026", category: "Talent & Workforce", href: "/blog/ai-crew-hiring-trends" },
+    { title: "The Future of Autonomous Maritime Systems", date: "June 2026", category: "Autonomy", href: "/blog/future-autonomous-maritime" },
+    { title: "Green Ports & Sustainability", date: "May 2026", category: "Decarbonisation", href: "#" },
+    { title: "Climate Resilience in Shipping Networks", date: "May 2026", category: "Resilience", href: "#" },
+    { title: "Digital Ports and Telematics", date: "March 2026", category: "Digital Twins", href: "#" }
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function BlogPage() {
           <div className="max-w-[1220px] mx-auto px-7">
             <p className="font-display text-[11px] font-bold tracking-[0.2em] text-t3 uppercase mb-6">Featured Article</p>
             
-            <div className="group bg-bg-card border border-bd-subtle rounded-2xl overflow-hidden hover:border-sky-base hover:shadow-[0_0_30px_rgba(74,184,232,0.1)] transition-all duration-500 cursor-pointer flex flex-col md:flex-row">
+            <Link href="/blog/future-autonomous-maritime" className="group bg-bg-card border border-bd-subtle rounded-2xl overflow-hidden hover:border-sky-base hover:shadow-[0_0_30px_rgba(74,184,232,0.1)] transition-all duration-500 cursor-pointer flex flex-col md:flex-row">
               <div className="md:w-1/2 h-64 md:h-auto bg-bg-raised relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-sky-dim/20 to-transparent group-hover:scale-105 transition-transform duration-700"></div>
                 {/* Image Placeholder */}
@@ -55,7 +55,7 @@ export default function BlogPage() {
                   Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </section>
 
@@ -66,7 +66,7 @@ export default function BlogPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, idx) => (
-                <div key={idx} className="group bg-bg-card border border-bd-subtle rounded-xl overflow-hidden hover:border-bd-default transition-all duration-300 cursor-pointer flex flex-col">
+                <Link key={idx} href={article.href} className="group bg-bg-card border border-bd-subtle rounded-xl overflow-hidden hover:border-bd-default transition-all duration-300 cursor-pointer flex flex-col">
                   <div className="h-48 bg-bg-raised relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-tr from-bg-surface to-transparent group-hover:opacity-50 transition-opacity"></div>
                   </div>
@@ -83,7 +83,7 @@ export default function BlogPage() {
                       Read more <span className="ml-1 group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100">&rarr;</span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             

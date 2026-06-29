@@ -34,16 +34,7 @@ export default function HomeIntro() {
       ══════════════════════════════════ */}
       <div className="max-w-[1220px] mx-auto px-8 md:px-12" style={{ paddingTop: '96px', paddingBottom: '80px' }}>
 
-        {/* Section label — sits ABOVE the grid, full width */}
-        <div className="flex items-center gap-3 mb-12">
-          <div style={{ width: '28px', height: '1px', background: '#4AB8E8', flexShrink: 0 }} />
-          <span
-            className="font-display font-bold uppercase"
-            style={{ fontSize: '0.67rem', letterSpacing: '0.26em', color: '#4AB8E8' }}
-          >
-            Introduction
-          </span>
-        </div>
+
 
         {/* Two-column grid — label is OUTSIDE so columns align naturally */}
         <div

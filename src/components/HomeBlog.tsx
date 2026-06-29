@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HomeBlog() {
   return (
-    <section className="py-24 bg-bg-deep relative overflow-hidden border-t border-bd-subtle">
+    <section id="insights" className="py-24 bg-bg-deep relative overflow-hidden border-t border-bd-subtle">
       <div className="max-w-[1220px] mx-auto px-7 relative z-10">
         <div className="mb-16">
           <p className="font-display text-[11px] font-bold tracking-[0.2em] text-sky-base uppercase mb-4">
