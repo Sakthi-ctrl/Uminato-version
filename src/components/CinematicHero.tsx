@@ -22,13 +22,6 @@ export default function CinematicHero() {
           { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out" },
           "+=0.05"
         )
-        // 3. Divider line draws across
-        .fromTo(
-          ".hero-divider",
-          { scaleX: 0 },
-          { scaleX: 1, duration: 0.8, ease: "power2.out" },
-          "-=0.6"
-        )
         // 4. Tagline
         .fromTo(
           ".hero-tagline",
@@ -69,33 +62,8 @@ export default function CinematicHero() {
         {/* Fallback for browsers that don't support external video */}
       </video>
 
-      {/* ── Dark Blue Gradient Overlay ── */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(2,11,24,0.78) 0%, rgba(4,13,31,0.72) 50%, rgba(2,11,24,0.92) 100%)",
-        }}
-      />
-
-      {/* ── Ambient Blue Glow ── */}
-      <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{
-            width: "900px",
-            height: "450px",
-            background: "radial-gradient(ellipse, rgba(74,184,232,0.08) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-0 right-0"
-          style={{
-            height: "200px",
-            background: "linear-gradient(to top, rgba(2,11,24,0.9), transparent)",
-          }}
-        />
-      </div>
+      {/* ── Neutral Dark Overlay for Text Visibility ── */}
+      <div className="absolute inset-0 z-[1] bg-black/50" />
 
       {/* ── Content ── */}
       <div className="relative z-10 flex flex-col items-center w-full max-w-6xl mx-auto pt-24 pb-16">
@@ -111,7 +79,6 @@ export default function CinematicHero() {
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
             textShadow: "none",
-            filter: "drop-shadow(0 0 60px rgba(74,184,232,0.25))",
           }}
         >
           UMINATO
@@ -119,26 +86,15 @@ export default function CinematicHero() {
 
         {/* Studio line — floats in AFTER UMINATO */}
         <p
-          className="hero-studio font-display font-bold uppercase tracking-[0.3em] text-sky-base"
+          className="hero-studio font-display font-bold uppercase tracking-[0.3em] text-sky-base drop-shadow-md"
           style={{ opacity: 0, fontSize: "clamp(0.65rem, 2vw, 1.25rem)", letterSpacing: "0.35em" }}
         >
           Maritime Innovation and Venture Studio
         </p>
 
-        {/* Divider */}
-        <div
-          className="hero-divider mx-auto my-6 origin-left"
-          style={{
-            height: "1px",
-            width: "120px",
-            background: "linear-gradient(90deg, transparent, #4AB8E8, transparent)",
-            transform: "scaleX(0)",
-          }}
-        />
-
         {/* Tagline */}
         <p
-          className="hero-tagline font-body text-t2 leading-relaxed max-w-3xl mb-10"
+          className="hero-tagline font-body text-white/90 leading-relaxed max-w-3xl mb-10 drop-shadow-lg font-medium"
           style={{ opacity: 0, fontSize: "clamp(0.95rem, 2vw, 1.2rem)" }}
         >
           Building Green, Autonomous and Resilient Maritime Systems —{" "}

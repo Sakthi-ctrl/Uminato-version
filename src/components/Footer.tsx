@@ -59,7 +59,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
             </div>
           </div>
 
-          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-[13px]">
+          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 lg:grid-cols-3 gap-8 text-[13px]">
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Studio</h4>
               <Link href="/about" className="text-t2 hover:text-sky-base transition-colors">About Us</Link>
@@ -81,14 +81,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               </a>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Company Address</h4>
-              <address className="text-t2 not-italic leading-relaxed">
-                D 64, Ground Floor<br />
-                Gulmohar Park<br />
-                New Delhi - 110049
-              </address>
-            </div>
+
           </div>
         </div>
 
