@@ -66,13 +66,13 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               <Link href="/projects" className="text-t2 hover:text-sky-base transition-colors">Featured Projects</Link>
               <Link href="/careers" className="text-t2 hover:text-sky-base transition-colors">Careers</Link>
             </div>
-            
+
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Insights</h4>
               <Link href="/blog" className="text-t2 hover:text-sky-base transition-colors">Latest Articles</Link>
               <Link href="/podcast" className="text-t2 hover:text-sky-base transition-colors">The UMINATO Podcast</Link>
             </div>
-            
+
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Connect</h4>
               <Link href="/contact" className="text-t2 hover:text-sky-base transition-colors">Contact Us</Link>
