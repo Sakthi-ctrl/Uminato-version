@@ -15,22 +15,22 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
         {!hideCTA && (
           <>
             <div className="flex flex-col items-center text-center mb-20">
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-t1 mb-8 max-w-3xl leading-tight">
+              <h2 className="font-display text-2xl md:text-5xl font-bold text-t1 mb-8 max-w-3xl leading-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
                 Let's Build the Future of Maritime Systems Together.
               </h2>
-              <button className="bg-sky-base hover:bg-sky-light text-t-inv font-medium py-3 px-8 rounded-md transition-all shadow-[0_0_28px_rgba(74,184,232,0.22)] text-[15px] mb-12">
+              <button className="bg-sky-base hover:bg-sky-light text-t-inv font-medium py-3 px-8 rounded-md transition-all shadow-[0_0_28px_rgba(74,184,232,0.22)] text-[15px] mb-12 min-h-[44px]">
                 Get in Touch
               </button>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <span className="text-[11px] font-bold tracking-[0.15em] text-t3 uppercase sm:mr-2">Follow Uminato:</span>
                 <div className="flex items-center justify-center gap-3 flex-wrap">
-                  <a href="#" aria-label="LinkedIn" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><LinkedinIcon /></a>
-                  <a href="#" aria-label="Instagram" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><InstagramIcon /></a>
-                  <a href="#" aria-label="Facebook" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><FacebookIcon /></a>
-                  <a href="#" aria-label="YouTube" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><YoutubeIcon /></a>
-                  <a href="#" aria-label="X (Twitter)" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><TwitterIcon /></a>
-                  <a href="#" aria-label="Spotify" className="w-9 h-9 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><SpotifyIcon /></a>
+                  <a href="#" aria-label="LinkedIn" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><LinkedinIcon /></a>
+                  <a href="#" aria-label="Instagram" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><InstagramIcon /></a>
+                  <a href="#" aria-label="Facebook" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><FacebookIcon /></a>
+                  <a href="#" aria-label="YouTube" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><YoutubeIcon /></a>
+                  <a href="#" aria-label="X (Twitter)" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><TwitterIcon /></a>
+                  <a href="#" aria-label="Spotify" className="w-11 h-11 bg-bg-card border border-bd-default rounded-md flex items-center justify-center text-t2 hover:bg-bg-raised hover:text-sky-base hover:border-sky-base transition-all"><SpotifyIcon /></a>
                 </div>
               </div>
             </div>
@@ -59,24 +59,24 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
             </div>
           </div>
 
-          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 lg:grid-cols-3 gap-8 text-[13px]">
+          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-[13px]">
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Studio</h4>
-              <Link href="/about" className="text-t2 hover:text-sky-base transition-colors">About Us</Link>
-              <Link href="/projects" className="text-t2 hover:text-sky-base transition-colors">Featured Projects</Link>
-              <Link href="/careers" className="text-t2 hover:text-sky-base transition-colors">Careers</Link>
+              <Link href="/about" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">About Us</Link>
+              <Link href="/projects" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">Featured Projects</Link>
+              <Link href="/careers" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">Careers</Link>
             </div>
 
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Insights</h4>
-              <Link href="/blog" className="text-t2 hover:text-sky-base transition-colors">Latest Articles</Link>
-              <Link href="/podcast" className="text-t2 hover:text-sky-base transition-colors">The UMINATO Podcast</Link>
+              <Link href="/blog" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">Latest Articles</Link>
+              <Link href="/podcast" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">The UMINATO Podcast</Link>
             </div>
 
             <div className="flex flex-col gap-5">
               <h4 className="text-[11px] font-bold text-t1 uppercase tracking-widest mb-1">Connect</h4>
-              <Link href="/contact" className="text-t2 hover:text-sky-base transition-colors">Contact Us</Link>
-              <a href="#" className="text-sky-base hover:text-sky-light transition-colors flex items-center gap-2 font-medium">
+              <Link href="/contact" className="text-t2 hover:text-sky-base transition-colors min-h-[44px] flex items-center">Contact Us</Link>
+              <a href="#" className="text-sky-base hover:text-sky-light transition-colors flex items-center gap-2 font-medium min-h-[44px]">
                 Join Community <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
             </div>
@@ -85,12 +85,12 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center mt-16 pt-8 border-t border-bd-subtle gap-4 text-[11px] text-t3">
-          <div>&copy; {new Date().getFullYear()} UMINATO. All rights reserved.</div>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-t1 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-t1 transition-colors">Terms of Service</Link>
-            <Link href="/cookies" className="hover:text-t1 transition-colors">Cookie Settings</Link>
+        <div className="flex flex-col md:flex-row justify-between items-center mt-16 pt-8 border-t border-bd-subtle gap-6 text-[11px] text-t3 text-center md:text-left">
+          <div className="order-2 md:order-1">&copy; {new Date().getFullYear()} UMINATO. All rights reserved.</div>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 order-1 md:order-2">
+            <Link href="/privacy" className="hover:text-t1 transition-colors min-h-[44px] flex items-center">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-t1 transition-colors min-h-[44px] flex items-center">Terms of Service</Link>
+            <Link href="/cookies" className="hover:text-t1 transition-colors min-h-[44px] flex items-center">Cookie Settings</Link>
           </div>
         </div>
       </div>

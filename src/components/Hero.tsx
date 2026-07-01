@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="font-display text-[11px] font-bold tracking-[0.2em] text-sky-base uppercase mb-[18px]">
             Maritime Venture Studio
           </p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.06] tracking-[-0.025em] mb-[18px]">
+          <h1 className="font-display font-extrabold leading-[1.06] tracking-[-0.025em] mb-[18px]" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
             Building Maritime Systems<br />
             <em className="not-italic bg-gradient-to-br from-sky-base to-sky-light text-transparent bg-clip-text">
               Green, Autonomous, Resilient,

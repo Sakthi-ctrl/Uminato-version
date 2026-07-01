@@ -42,7 +42,7 @@ export default function HomeIntro() {
           style={{ alignItems: 'center' }}
         >
           {/* ── LEFT: Heading ── */}
-          <div style={{ paddingRight: '64px' }}>
+          <div className="lg:pr-16 mb-8 lg:mb-0">
             <h2
               className="font-display font-bold text-t1 leading-[1.06] tracking-tight"
               style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}
@@ -56,16 +56,7 @@ export default function HomeIntro() {
           </div>
 
           {/* ── RIGHT: Body paragraphs ── */}
-          <div
-            className="mt-10 lg:mt-0"
-            style={{
-              paddingLeft: '56px',
-              borderLeft: '1px solid rgba(74,184,232,0.2)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-            }}
-          >
+          <div className="mt-8 lg:mt-0 lg:pl-14 lg:border-l lg:border-sky-base/20 flex flex-col gap-5">
             <p className="font-body text-t2 leading-[1.8]" style={{ fontSize: '0.9375rem' }}>
               India's ports, waterways, and coastlines are at the centre of one of the world's most
               ambitious maritime transformations — Harit Sagar, Harit Nauka, Sagarmala, Maritime
@@ -114,15 +105,11 @@ export default function HomeIntro() {
         className="max-w-[1220px] mx-auto px-8 md:px-12"
         style={{ paddingBottom: '96px' }}
       >
-        {/* 2×2 grid using gap-px + wrapper background for visible inner borders */}
+        {/* 1 or 2 col grid using gap-px + wrapper background for visible inner borders */}
         <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-px rounded-xl overflow-hidden"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '1px',
             background: 'rgba(74,184,232,0.12)',
-            borderRadius: '12px',
-            overflow: 'hidden',
             border: '1px solid rgba(74,184,232,0.12)',
           }}
         >

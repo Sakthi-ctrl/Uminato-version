@@ -61,14 +61,14 @@ export default function HomeProjects() {
                 Our Ventures
               </span>
             </div>
-            <h2 className="font-display font-bold text-t1 leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
+            <h2 className="font-display font-bold text-t1 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
               Projects &amp; Platforms
             </h2>
           </div>
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 font-body font-medium text-sky-base border border-sky-base rounded-md transition-all"
+            className="inline-flex items-center gap-2 font-body font-medium text-sky-base border border-sky-base rounded-md transition-all min-h-[44px] justify-center"
             style={{ padding: '10px 22px', fontSize: '0.85rem', letterSpacing: '0.02em', whiteSpace: 'nowrap' }}
           >
             View All Projects
@@ -126,8 +126,8 @@ export default function HomeProjects() {
 
                   {/* Row 2: Title */}
                   <h3
-                    className="font-display font-bold text-t1 leading-snug mb-1"
-                    style={{ fontSize: '1.125rem' }}
+                    className="font-display font-bold text-t1 leading-snug mb-2"
+                    style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.35rem)' }}
                   >
                     {proj.title}
                   </h3>

@@ -15,14 +15,14 @@ export default function About() {
           <p className="font-display text-[11px] font-bold tracking-[0.2em] text-sky-base uppercase mb-2">
             Our Purpose
           </p>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-t1 mb-6">
+          <h2 className="font-display font-bold text-t1 mb-6" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)' }}>
             To accelerate the transition toward green, autonomous, resilient, and future-ready maritime systems.
           </h2>
           <p className="text-[14px] text-t2 leading-[1.7] mb-12">
             UMINATO is a maritime venture studio that researches, builds, and scales technologies, ventures, and partnerships addressing the most significant shifts shaping the future of maritime systems.
           </p>
           
-          <h3 className="font-display text-[20px] font-bold text-t1 mb-6">The Four Shifts</h3>
+          <h3 className="font-display font-bold text-t1 mb-6" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>The Four Shifts</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div>
               <h4 className="font-display text-[15px] font-bold text-sky-base mb-2">⚓ Autonomous Systems</h4>
@@ -42,7 +42,7 @@ export default function About() {
             </div>
           </div>
 
-          <h3 className="font-display text-[20px] font-bold text-t1 mb-6">Our Framework</h3>
+          <h3 className="font-display font-bold text-t1 mb-6" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>Our Framework</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-bg-surface/50 p-5 rounded-xl border border-bd-subtle">
               <h4 className="font-display text-[14px] font-bold text-t1 mb-2">Discover &amp; Validate</h4>

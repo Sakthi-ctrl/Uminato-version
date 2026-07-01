@@ -10,10 +10,10 @@ export default function HomeBlog() {
             Insights &amp; Blog
           </p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-t1 leading-tight max-w-2xl">
+            <h2 className="font-display font-bold text-t1 leading-tight max-w-2xl mb-6 md:mb-0" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
               Latest Insights
             </h2>
-            <Link href="/blog" className="bg-transparent border border-sky-base text-sky-base px-6 py-2.5 rounded-md font-body font-medium text-[14px] hover:bg-[rgba(74,184,232,0.1)] transition-all inline-flex items-center gap-2">
+            <Link href="/blog" className="bg-transparent border border-sky-base text-sky-base px-6 py-2.5 rounded-md font-body font-medium text-[14px] hover:bg-[rgba(74,184,232,0.1)] transition-all inline-flex items-center justify-center gap-2 min-h-[44px]">
               View All Insights
               <span>&rarr;</span>
             </Link>
@@ -30,7 +30,7 @@ export default function HomeBlog() {
               <span className="text-[11px] px-2.5 py-1 bg-bg-raised border border-bd-subtle rounded text-sky-base font-body mb-4 inline-block font-medium">
                 Featured Insight
               </span>
-              <h3 className="font-display text-2xl font-bold text-t1 mb-4 group-hover:text-sky-base transition-colors">
+              <h3 className="font-display font-bold text-t1 mb-4 group-hover:text-sky-base transition-colors" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}>
                 The Future of Autonomous Maritime Systems
               </h3>
               <p className="text-sm text-t2 font-body leading-relaxed">
@@ -54,9 +54,9 @@ export default function HomeBlog() {
             <div className="p-8 bg-bg-surface border border-bd-subtle rounded-xl flex-grow flex flex-col justify-center">
               <h4 className="font-display text-lg font-bold text-t1 mb-2">Subscribe to Insights</h4>
               <p className="text-sm text-t2 font-body mb-6">Receive the latest research and perspectives on maritime transformation directly in your inbox.</p>
-              <div className="flex gap-2">
-                <input type="email" placeholder="Your email address" className="bg-bg-card border border-bd-default rounded-md px-4 py-2.5 font-body text-[13.5px] text-t1 outline-none focus:border-sky-base flex-grow" />
-                <button className="bg-sky-base text-t-inv px-6 py-2.5 rounded-md font-body font-medium text-[14px] hover:bg-sky-light transition-all">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Your email address" className="bg-bg-card border border-bd-default rounded-md px-4 py-2.5 font-body text-[13.5px] text-t1 outline-none focus:border-sky-base flex-grow min-h-[44px]" />
+                <button className="bg-sky-base text-t-inv px-6 py-2.5 rounded-md font-body font-medium text-[14px] hover:bg-sky-light transition-all min-h-[44px]">
                   Subscribe
                 </button>
               </div>

@@ -14,7 +14,7 @@ export default function HomePodcast() {
             <p className="font-display text-[11px] font-bold tracking-[0.2em] text-sky-base uppercase mb-4">
               Podcast
             </p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-t1 mb-6">
+            <h2 className="font-display font-bold text-t1 mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
               Future of Maritime Systems
             </h2>
             <p className="text-lg text-t2 font-body mb-8">
@@ -30,14 +30,14 @@ export default function HomePodcast() {
 
             <div className="mb-10">
               <span className="text-xs font-semibold text-t3 uppercase tracking-wider block mb-4">Platforms:</span>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <span className="text-sm text-t2 font-medium bg-bg-raised px-4 py-2 rounded-md border border-bd-subtle">Spotify</span>
                 <span className="text-sm text-t2 font-medium bg-bg-raised px-4 py-2 rounded-md border border-bd-subtle">Apple Podcasts</span>
                 <span className="text-sm text-t2 font-medium bg-bg-raised px-4 py-2 rounded-md border border-bd-subtle">YouTube</span>
               </div>
             </div>
 
-            <button className="bg-sky-base text-t-inv px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-sky-light transition-all shadow-[0_0_20px_rgba(74,184,232,0.15)]">
+            <button className="bg-sky-base text-t-inv px-8 py-3.5 rounded-md font-body font-medium text-[15px] hover:bg-sky-light transition-all shadow-[0_0_20px_rgba(74,184,232,0.15)] min-h-[44px]">
               Subscribe
             </button>
           </div>

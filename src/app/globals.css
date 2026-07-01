@@ -29,6 +29,11 @@
   --font-body: var(--font-poppins);
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: var(--color-bg-deep);
   color: var(--color-t1);
