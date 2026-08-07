@@ -1,0 +1,191 @@
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+const PROJECTS = [
+  {
+    id: "01",
+    code: "HTWIN",
+    title: "HarborTwin — Maritime AI & Digital Intelligence Platform",
+    subtitle: "Modular Technology Platform for Ports & Terminal Value Chains",
+    desc: "HarborTwin is Uminato Maritime's modular technology platform for the port and terminal value chain. It brings together pre-built capabilities, proven technology components, specialist startups, and OEM partner solutions — configured, integrated, and developed around each customer's operational requirements. Covering operations, asset reliability, AI vision, sustainability, workforce, digital twins, and GenAI workflows.",
+    image: "/assets/projects/harbortwin.png",
+    focus: [
+      "Port & Terminal Operations",
+      "Asset Reliability & Predictive Maintenance",
+      "AI Vision & CCTV Analytics",
+      "Sustainability & Decarbonisation",
+      "Workforce Intelligence",
+      "Digital Twin & Planning",
+      "GenAI & Agentic Workflows",
+    ],
+    status: "Live Platform",
+  },
+  {
+    id: "02",
+    code: "MAPMI",
+    title: "MAPMI — Maritime and Ports Maturity Index",
+    subtitle: "Smart, Green, Resilient and Climate-Ready Performance — Objectively Measured",
+    desc: "MAPMI benchmarks ports, terminals, and coastal ecosystems across decarbonisation, digitisation, robotisation, and climate resilience — drawing exclusively on objective data extracted through system integrations, APIs, and remote sensing, with minimal human subjectivity. Part of the UMINATO Maritime Tech Suite, MAPMI gives port authorities, regulators, planners, and investors a credible, defensible performance baseline — and a clear roadmap for transformation.",
+    image: "/assets/projects/mapmi.png",
+    focus: [
+      "Decarbonisation",
+      "Digitisation",
+      "Robotisation",
+      "Climate Resilience",
+      "Remote Sensing",
+      "Performance Benchmarking",
+    ],
+    status: "In Development",
+  },
+  {
+    id: "03",
+    code: "C2OS",
+    title: "C2OS — Crew Command Operating System",
+    subtitle: "The AI Co-Captain for Smarter, Safer Ship Operations",
+    desc: "C2OS is an AI-powered command intelligence platform that transforms how vessels are operated — shifting from fragmented, reactive systems to a unified autonomous brain that predicts fatigue risks, ensures IMO/STCW compliance, optimises crew deployment, and delivers real-time decision support to captains and fleet managers. Built on a multi-agent architecture and integrated with vessel IoT, ERP, and port platforms, C2OS is the intelligence layer modern shipping demands.",
+    image: "/assets/projects/c2os.png",
+    focus: [
+      "AI Command Intelligence",
+      "STCW Compliance",
+      "Fatigue Risk Prediction",
+      "Multi-Agent Architecture",
+      "Vessel IoT",
+      "Fleet Management",
+    ],
+    status: "Research & Pilot",
+  },
+  {
+    id: "04",
+    code: "SGPTLP",
+    title: "Smart & Green Ports Transformation Leadership Program",
+    subtitle: "Leading the Transition to Smarter, Greener, and More Resilient Ports",
+    desc: "A practitioner-led program designed for port executives, mid-level managers, and government officials navigating the twin pressures of decarbonisation and digitalisation. Delivered in hybrid format across multiple certification levels — each certified with recognised academic and industry authorities — participants gain the frameworks, tools, and networks to lead maritime transformation, not just manage it.",
+    image: "/assets/projects/sgptlp.png",
+    focus: [
+      "Green Ports",
+      "Smart Ports",
+      "Transformation Leadership",
+      "Decarbonisation",
+      "Innovation",
+      "Future Skills",
+    ],
+    status: "Program Development",
+  },
+];
+
+export default function ProjectsPage() {
+  return (
+    <>
+      <Header />
+      <main className="flex-grow w-full overflow-hidden bg-bg-void pt-24">
+
+        {/* ── Hero ── */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="max-w-[1220px] mx-auto px-7 relative z-10">
+            <p className="font-display text-[11px] font-bold tracking-[0.2em] text-sky-base uppercase mb-6">
+              Our Work
+            </p>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-t1 mb-8 max-w-4xl leading-tight">
+              Projects &amp; Platforms
+            </h1>
+            <p className="text-xl text-t2 font-body max-w-2xl leading-relaxed">
+              Research, technology, leadership, and venture initiatives transforming maritime
+              industries — from India's coastlines to port economies worldwide.
+            </p>
+          </div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bg-surface/50 to-transparent pointer-events-none" />
+        </section>
+
+        {/* ── Projects List ── */}
+        <section className="py-12 pb-32">
+          <div className="max-w-[1220px] mx-auto px-7 flex flex-col gap-12">
+            {PROJECTS.map((proj) => (
+              <div
+                key={proj.id}
+                className="bg-bg-card border border-bd-subtle rounded-2xl hover:border-bd-default hover:shadow-2xl transition-all duration-500 relative overflow-hidden group flex flex-col lg:flex-row"
+              >
+                {/* Glow */}
+                <div className="absolute -inset-px bg-gradient-to-r from-sky-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-xl z-10" />
+
+                {/* Text Content Area */}
+                <div className="relative z-20 flex-1 p-8 md:p-12 flex flex-col justify-between">
+                  <div>
+                    {/* Status */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-[rgba(74,184,232,0.1)] border border-[rgba(74,184,232,0.2)] rounded-full text-sky-base text-xs font-semibold mb-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-sky-base" />
+                      {proj.status}
+                    </div>
+
+                    {/* Code */}
+                    <p className="font-display text-xs font-bold tracking-[0.2em] text-sky-base/60 uppercase mb-2">
+                      Project {proj.id} — {proj.code}
+                    </p>
+
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-t1 mb-2 leading-tight">
+                      {proj.title}
+                    </h2>
+                    <p className="font-body text-sm text-sky-base italic mb-6">
+                      {proj.subtitle}
+                    </p>
+
+                    <p className="text-base text-t2 font-body mb-8 leading-relaxed">
+                      {proj.desc}
+                    </p>
+
+                    <div>
+                      <h4 className="text-xs font-semibold text-t1 uppercase tracking-wider mb-4">
+                        Focus Areas
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mb-8">
+                        {proj.focus.map((area, i) => (
+                          <span
+                            key={i}
+                            className="text-[12px] px-3 py-1.5 bg-bg-raised border border-bd-subtle rounded text-t2 font-body"
+                          >
+                            {area}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <button className="bg-transparent border border-sky-base text-sky-base px-6 py-3 rounded-md font-body font-medium text-[14px] hover:bg-sky-base hover:text-t-inv transition-all min-w-[200px] shadow-[0_0_15px_rgba(74,184,232,0.1)]">
+                      View Initiative Details
+                    </button>
+                  </div>
+                </div>
+
+                {/* Project Image Overlay Container */}
+                <div className="relative lg:w-[420px] min-h-[300px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-bd-subtle flex-shrink-0">
+                  <img
+                    src={proj.image}
+                    alt={proj.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Gradient Overlay for Text legibility and aesthetics */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080F1E] via-[#080F1E]/40 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-[#080F1E]/50 lg:to-[#080F1E] pointer-events-none" />
+                  
+                  {/* Subtle Image Tag Overlay */}
+                  <div className="absolute bottom-6 left-6 right-6 z-20">
+                    <div className="bg-[#080F1E]/85 backdrop-blur-md border border-sky-base/30 rounded-lg p-4 shadow-lg">
+                      <p className="text-xs font-display font-semibold text-sky-base uppercase tracking-wider mb-1">
+                        {proj.code} Visual Matrix
+                      </p>
+                      <p className="text-[12px] text-t2 font-body line-clamp-1">
+                        {proj.title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </main>
+      <Footer hideCTA />
+    </>
+  );
+}
