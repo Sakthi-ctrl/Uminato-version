@@ -187,10 +187,6 @@ export default function AboutPage() {
                 { value: '4', label: 'Venture Initiatives' },
                 { value: '6', label: 'Maritime Sectors' },
                 { value: '4', label: 'Strategic Shifts' },
-<<<<<<< HEAD
-=======
-                { value: '2', label: 'Co-Founders' },
->>>>>>> 512532d65b8cd410680701d063d023f57bef47bd
               ].map((stat, i) => (
                 <div
                   key={i}
