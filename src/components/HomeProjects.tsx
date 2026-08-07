@@ -13,6 +13,7 @@ const STATUS_COLORS: Record<string, string> = {
 const PROJECTS = [
   {
     id: '01',
+    code : '',
     title: 'HarborTwin',
     subtitle: 'Ports & Terminals - AI & Digital Intelligence Platform',
     desc: 'Improve Ports & Terminals operational efficiency, asset reliability, sustainability, workforce productivity, and executive decision-making by leveraging AI, Digital Twins, IoT, computer vision, predictive analytics, and workflow automation.',
@@ -22,6 +23,7 @@ const PROJECTS = [
   },
   {
     id: '02',
+    code: '',
     title: 'Maritime and Ports Maturity Index',
     subtitle: 'Smart, Green, Resilient and Climate-Ready Performance — Objectively Measured',
     desc: 'MAPMI benchmarks ports, terminals, and coastal ecosystems across decarbonisation, digitisation, robotisation, and climate resilience — drawing exclusively on objective data extracted through system integrations.',
@@ -31,6 +33,7 @@ const PROJECTS = [
   },
   {
     id: '03',
+    code: '',
     title: 'Crew Command Operating System',
     subtitle: 'The AI Co-Captain for Smarter, Safer Ship Operations',
     desc: 'C2OS is an AI-powered command intelligence platform that transforms how vessels are operated — shifting from fragmented, reactive systems to a unified autonomous brain that predicts fatigue risks.',
@@ -40,6 +43,7 @@ const PROJECTS = [
   },
   {
     id: '04',
+    code: '',
     title: 'Smart & Green Ports Transformation Leadership Program',
     subtitle: 'Leading the Transition to Smarter, Greener, and More Resilient Ports',
     desc: 'A practitioner-led program for port executives, mid-level managers, and government officials navigating decarbonisation and digitalisation — delivered in hybrid format.',
@@ -105,7 +109,7 @@ export default function HomeProjects() {
                       className="font-display font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded bg-[#080F1E]/80 border border-sky-base/30 backdrop-blur-md"
                       style={{ fontSize: '0.68rem', color: '#4AB8E8' }}
                     >
-                      {proj.code} · {proj.id}
+                      {proj.code}  {proj.id}
                     </span>
                     <span
                       className="font-display font-semibold rounded-full backdrop-blur-md"
