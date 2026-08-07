@@ -19,7 +19,7 @@ const PROJECTS = [
     desc: 'Improve Ports & Terminals operational efficiency, asset reliability, sustainability, workforce productivity, and executive decision-making by leveraging AI, Digital Twins, IoT, computer vision, predictive analytics, and workflow automation.',
     image: '/assets/projects/harbortwin.png',
     focus: ['Port & Terminal Ops', 'Asset Reliability', 'AI Vision', 'Sustainability', 'Digital Twin', 'GenAI Workflows'],
-    status: 'Live Platform',
+    status: 'MVP Validation',
   },
   {
     id: '02',
