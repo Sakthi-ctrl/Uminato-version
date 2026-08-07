@@ -12,20 +12,20 @@ const FOUNDERS = [
     bio: "A veteran across multiple industries and a pioneer of climate change mitigation and decarbonisation — Umesh saw the maritime sector's urgent need clearly and built UMINATO to answer it."
   },
   {
-    name: "Ram Shankar",
-    role: "Cofounder",
-    expertise: "Chief Innovations & Strategic Advisor",
-    initials: "RS",
-    image: "/image 02.jpg",
-    bio: "Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems."
-  },
-  {
     name: "Capt. Indresh Kharbanda",
     role: "Cofounder",
     expertise: "Director.",
     initials: "IK",
     image: "/Image 03.jpeg",
     bio: "A decorated veteran ship captain bringing decades of lived experience from the deck up — giving UMINATO its operational credibility and its human compass."
+  },
+  {
+    name: "Ram Shankar",
+    role: "Cofounder",
+    expertise: "Strategic Advisor",
+    initials: "RS",
+    image: "/image 02.jpg",
+    bio: "Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems."
   },
 ];
 

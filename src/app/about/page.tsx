@@ -13,18 +13,18 @@ const FOUNDERS = [
     bio: "A veteran across multiple industries and a pioneer of climate change mitigation and decarbonisation — Umesh saw the maritime sector's urgent need clearly and built UMINATO to answer it.",
   },
   {
-    photo: '/image 02.jpg',
-    name: 'Ram Shankar',
-    role: 'Cofounder',
-    expertise: 'Chief Innovations & Strategic Advisor',
-    bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
-  },
-  {
     photo: '/Image 03.jpeg',
     name: 'Capt. Indresh Kharbanda',
     role: 'Cofounder',
     expertise: 'Director.',
     bio: 'A decorated veteran ship captain bringing decades of lived experience from the deck up — giving UMINATO its operational credibility and its human compass.',
+  },
+  {
+    photo: '/image 02.jpg',
+    name: 'Ram Shankar',
+    role: 'Cofounder',
+    expertise: 'Strategic Advisor',
+    bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
   },
 ];
 
@@ -230,15 +230,15 @@ export default function AboutPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <div style={{ width: '28px', height: '1px', background: '#4AB8E8', flexShrink: 0 }} />
                   <span className="font-display font-bold uppercase" style={{ fontSize: '0.67rem', letterSpacing: '0.28em', color: '#4AB8E8' }}>
-                    Our Founders
+                    Our Team
                   </span>
                 </div>
                 <h2
                   className="font-display font-bold text-t1 leading-tight"
                   style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
                 >
-                  Three Minds.{' '}
-                  <span style={{ color: '#4AB8E8' }}>One Mission.</span>
+                  The Minds{' '}
+                  <span style={{ color: '#4AB8E8' }}>for Mission.</span>
                 </h2>
               </div>
 

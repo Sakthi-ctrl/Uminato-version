@@ -13,7 +13,7 @@ const STATUS_COLORS: Record<string, string> = {
 const PROJECTS = [
   {
     id: '01',
-    code : '',
+    code: '',
     title: 'HarborTwin',
     subtitle: 'Ports & Terminals - AI & Digital Intelligence Platform',
     desc: 'Improve Ports & Terminals operational efficiency, asset reliability, sustainability, workforce productivity, and executive decision-making by leveraging AI, Digital Twins, IoT, computer vision, predictive analytics, and workflow automation.',
@@ -102,14 +102,14 @@ export default function HomeProjects() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E38] via-[#0F1E38]/60 to-transparent" />
-                  
+
                   {/* Floating Overlay Badge */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                     <span
                       className="font-display font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded bg-[#080F1E]/80 border border-sky-base/30 backdrop-blur-md"
                       style={{ fontSize: '0.68rem', color: '#4AB8E8' }}
                     >
-                      {proj.code}  {proj.id}
+                      {proj.code} {proj.id}
                     </span>
                     <span
                       className="font-display font-semibold rounded-full backdrop-blur-md"
