@@ -21,9 +21,9 @@ const FOUNDERS = [
   },
   {
     photo: '/image 02.jpg',
-    name: 'Ram Shankar',
-    role: 'Cofounder',
-    expertise: 'Strategic Advisor',
+    name: 'Ramshankar C S',
+    role: 'Board Advisor',
+    expertise: 'Strategy & Innovation',
     bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
   },
 ];
@@ -175,7 +175,7 @@ export default function AboutPage() {
 
             {/* Bottom stats row */}
             <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-px mt-20"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-px mt-20"
               style={{
                 background: 'rgba(74,184,232,0.1)',
                 borderRadius: '10px',
@@ -187,7 +187,6 @@ export default function AboutPage() {
                 { value: '4', label: 'Venture Initiatives' },
                 { value: '6', label: 'Maritime Sectors' },
                 { value: '4', label: 'Strategic Shifts' },
-                { value: '3', label: 'Co-Founders' },
               ].map((stat, i) => (
                 <div
                   key={i}
