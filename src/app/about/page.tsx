@@ -21,7 +21,7 @@ const FOUNDERS = [
   },
   {
     photo: '/image 02.jpg',
-    name: 'Ram Shankar',
+    name: 'RamShankar C S',
     role: 'Board Advisor',
     expertise: 'Strategy & Innovation',
     bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
