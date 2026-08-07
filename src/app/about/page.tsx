@@ -21,7 +21,7 @@ const FOUNDERS = [
   },
   {
     photo: '/image 02.jpg',
-    name: 'Ramshankar C S',
+    name: 'RamShankar C S',
     role: 'Board Advisor',
     expertise: 'Strategy & Innovation',
     bio: 'Founder of Maxbyte Technologies across India, the Middle East, and the USA, and one of the foremost pioneers of Industry 4.0 — bringing deep expertise in AI, robotics, and intelligent systems.',
@@ -187,6 +187,10 @@ export default function AboutPage() {
                 { value: '4', label: 'Venture Initiatives' },
                 { value: '6', label: 'Maritime Sectors' },
                 { value: '4', label: 'Strategic Shifts' },
+<<<<<<< HEAD
+=======
+                { value: '2', label: 'Co-Founders' },
+>>>>>>> 512532d65b8cd410680701d063d023f57bef47bd
               ].map((stat, i) => (
                 <div
                   key={i}
