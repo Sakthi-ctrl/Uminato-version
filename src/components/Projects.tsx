@@ -16,8 +16,8 @@ export default function Projects() {
             <h2 className="font-display font-bold text-t1 mb-6" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>Projects &amp; Platforms</h2>
 
             <div className="mb-8">
-              <h3 className="font-display text-[15px] font-bold text-t1 mb-2">HarborTwin — Maritime AI &amp; Digital Intelligence Platform</h3>
-              <p className="text-[13.5px] text-t2 leading-[1.65] mb-3">A modular technology platform connecting operational intelligence, asset reliability, AI vision, sustainability, and GenAI workflows for ports &amp; terminals.</p>
+              <h3 className="font-display text-[15px] font-bold text-t1 mb-2">HarborTwin — Ports &amp; Terminals - AI &amp; Digital Intelligence Platform</h3>
+              <p className="text-[13.5px] text-t2 leading-[1.65] mb-3">Improve Ports &amp; Terminals operational efficiency, asset reliability, sustainability, workforce productivity, and executive decision-making by leveraging AI, Digital Twins, IoT, computer vision, predictive analytics, and workflow automation.</p>
               <div className="flex flex-wrap gap-2 mb-2">
                 <span className="text-[10.5px] font-semibold tracking-[0.1em] text-t3 uppercase">Focus Areas:</span>
                 <span className="text-[12px] text-sky-base">Port Operations &bull; Predictive Maintenance &bull; AI Vision &bull; Digital Twin &bull; GenAI</span>

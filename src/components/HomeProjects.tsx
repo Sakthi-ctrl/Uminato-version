@@ -14,9 +14,9 @@ const PROJECTS = [
   {
     id: '01',
     code: 'HTWIN',
-    title: 'HarborTwin — Maritime AI & Digital Intelligence Platform',
-    subtitle: 'Modular Technology Platform for Ports & Terminal Value Chains',
-    desc: "HarborTwin is Uminato Maritime's modular technology platform for the port and terminal value chain. It brings together pre-built capabilities, proven technology components, specialist startups, and OEM partner solutions.",
+    title: 'HarborTwin',
+    subtitle: 'Ports & Terminals - AI & Digital Intelligence Platform',
+    desc: 'Improve Ports & Terminals operational efficiency, asset reliability, sustainability, workforce productivity, and executive decision-making by leveraging AI, Digital Twins, IoT, computer vision, predictive analytics, and workflow automation.',
     image: '/assets/projects/harbortwin.png',
     focus: ['Port & Terminal Ops', 'Asset Reliability', 'AI Vision', 'Sustainability', 'Digital Twin', 'GenAI Workflows'],
     status: 'Live Platform',
