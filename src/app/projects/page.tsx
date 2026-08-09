@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -151,9 +152,12 @@ export default function ProjectsPage() {
                   </div>
 
                   <div>
-                    <button className="bg-transparent border border-sky-base text-sky-base px-6 py-3 rounded-md font-body font-medium text-[14px] hover:bg-sky-base hover:text-t-inv transition-all min-w-[200px] shadow-[0_0_15px_rgba(74,184,232,0.1)]">
+                    <Link
+                      href={proj.id === "01" ? "/harbortwin" : "#"}
+                      className="inline-flex items-center justify-center bg-transparent border border-sky-base text-sky-base px-6 py-3 rounded-md font-body font-medium text-[14px] hover:bg-sky-base hover:text-t-inv transition-all min-w-[200px] shadow-[0_0_15px_rgba(74,184,232,0.1)]"
+                    >
                       View Initiative Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
 
