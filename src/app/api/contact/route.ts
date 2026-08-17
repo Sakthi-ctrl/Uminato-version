@@ -98,7 +98,7 @@ export async function POST(req: Request) {
       // In development or when SMTP is pending configuration, log securely to console
       console.log("-----------------------------------------");
       console.log("[CONTACT FORM SUBMISSION RECEIVED]");
-      console.log("To (Team):", receiverEmail);
+      console.log("To (Team):", receiverEmails.join(", "));
       console.log("Reply-To:", internalMail.replyTo);
       console.log("Subject:", internalMail.subject);
       console.log("\n" + internalMail.text);
