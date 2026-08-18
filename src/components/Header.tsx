@@ -20,7 +20,6 @@ export default function Header() {
     { href: '/', label: 'HOME' },
     { href: '/about', label: 'ABOUT' },
     { href: '/projects', label: 'PROJECTS' },
-    { href: '/harbortwin', label: 'HARBORTWIN' },
     { href: '/podcast', label: 'PODCAST' },
     { href: '/blog', label: 'BLOG' },
     { href: '/contact', label: 'CONTACT' },

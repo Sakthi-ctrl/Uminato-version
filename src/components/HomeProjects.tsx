@@ -157,7 +157,7 @@ export default function HomeProjects() {
                   </p>
 
                   {/* Row 5: Focus tags */}
-                  <div>
+                  <div className="mb-6">
                     <p
                       className="font-display font-bold uppercase tracking-wider mb-3"
                       style={{ fontSize: '0.65rem', color: '#4E6E88' }}
@@ -182,6 +182,32 @@ export default function HomeProjects() {
                         </span>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Row 6: Action Button */}
+                  <div className="mt-auto pt-4 border-t border-[#1E3158]/70 flex items-center justify-between">
+                    <Link
+                      href={proj.id === '01' ? '/harbortwin' : '/projects'}
+                      className="inline-flex items-center gap-2 font-display text-[13px] font-semibold text-sky-base hover:text-[#080F1E] bg-sky-base/10 hover:bg-sky-base border border-sky-base/40 hover:border-sky-base px-5 py-2.5 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(74,184,232,0.1)] group/btn min-h-[44px]"
+                    >
+                      <span>Learn More</span>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transform group-hover/btn:translate-x-1 transition-transform duration-200"
+                      >
+                        <path
+                          d="M2.625 7H11.375M11.375 7L7.875 3.5M11.375 7L7.875 10.5"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </div>
