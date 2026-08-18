@@ -49,9 +49,9 @@ export async function POST(req: Request) {
     const internalMail = generateInternalNotificationEmail(submission);
     const visitorMail = generateVisitorConfirmationEmail(submission);
 
-    // 2. Prepare Transport (if SMTP environment variables are set)
+    // 2. Prepare Transport
     const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
+    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 465;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const rawReceiverEmails = process.env.CONTACT_RECEIVER_EMAIL || process.env.SMTP_USER || "info@uminato.com";
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
       .split(",")
       .map((e) => e.trim())
       .filter((e) => e.length > 0);
-    const senderFrom = process.env.SMTP_FROM || `"UMINATO" <${smtpUser || "no-reply@uminato.com"}>`;
+    const senderFrom = process.env.SMTP_FROM || `"UMINATO" <${smtpUser || "uminatomaritime@gmail.com"}>`;
 
     if (smtpHost && smtpUser && smtpPass) {
       const transporter = nodemailer.createTransport({
@@ -70,43 +70,54 @@ export async function POST(req: Request) {
           user: smtpUser,
           pass: smtpPass,
         },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
 
-      // Send internal notification to UMINATO team (all configured recipients)
-      await transporter.sendMail({
-        from: senderFrom,
-        to: receiverEmails,
-        replyTo: internalMail.replyTo,
-        subject: internalMail.subject,
-        text: internalMail.text,
-        html: internalMail.html,
-      });
-
-      // Send visitor confirmation auto-reply
-      try {
-        await transporter.sendMail({
+      // Send both internal notification and visitor confirmation in parallel
+      const [teamResult, visitorResult] = await Promise.allSettled([
+        transporter.sendMail({
+          from: senderFrom,
+          to: receiverEmails,
+          replyTo: internalMail.replyTo,
+          subject: internalMail.subject,
+          text: internalMail.text,
+          html: internalMail.html,
+        }),
+        transporter.sendMail({
           from: senderFrom,
           to: submission.email,
           subject: visitorMail.subject,
           text: visitorMail.text,
           html: visitorMail.html,
-        });
-      } catch (autoReplyErr) {
-        console.error("Auto-reply notification error:", autoReplyErr);
+        }),
+      ]);
+
+      if (teamResult.status === "rejected") {
+        console.error("Failed to send internal team email:", teamResult.reason);
+        throw new Error("Unable to deliver message to support team. Please try again later.");
+      }
+
+      if (visitorResult.status === "rejected") {
+        console.warn("Failed to send visitor auto-reply email:", visitorResult.reason);
       }
     } else {
-      // In development or when SMTP is pending configuration, log securely to console
+      if (process.env.NODE_ENV === "production") {
+        console.error("[CRITICAL] SMTP credentials are not configured in production environment variables.");
+        return NextResponse.json(
+          { error: "Email service is temporarily unconfigured. Please contact us directly via email." },
+          { status: 503 }
+        );
+      }
+
+      // In development when SMTP is not configured, log to console
       console.log("-----------------------------------------");
-      console.log("[CONTACT FORM SUBMISSION RECEIVED]");
+      console.log("[DEV MODE - NO SMTP DETECTED - CONTACT FORM SUBMISSION]");
       console.log("To (Team):", receiverEmails.join(", "));
       console.log("Reply-To:", internalMail.replyTo);
       console.log("Subject:", internalMail.subject);
       console.log("\n" + internalMail.text);
-      console.log("-----------------------------------------");
-      console.log("[VISITOR AUTO-REPLY GENERATED]");
-      console.log("To (Visitor):", submission.email);
-      console.log("Subject:", visitorMail.subject);
-      console.log("\n" + visitorMail.text);
       console.log("-----------------------------------------");
     }
 

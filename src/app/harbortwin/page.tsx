@@ -5,8 +5,8 @@ import SmoothScroll from '@/components/SmoothScroll';
 import HarborTwinOnePager from '@/components/HarborTwinOnePager';
 
 export const metadata = {
-  title: 'HarborTwin Executive One-Pager | Uminato Maritime Group',
-  description: 'Maritime AI & Digital Intelligence Solutions for Ports & Terminals — Executive Overview of HarborTwin platform by Uminato Maritime Group.',
+  title: 'HarborTwin™ | Maritime AI & Digital Twin Intelligence for Ports & Terminals',
+  description: 'Enterprise AI & Real-Time Digital Twin Platform for Global Ports & Terminals by Uminato Maritime Group.',
 };
 
 export default function HarborTwinPage() {
