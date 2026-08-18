@@ -195,7 +195,71 @@ export default function HarborTwinOnePager() {
   const [selectedCapability, setSelectedCapability] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [filterCategory, setFilterCategory] = useState<string>('all');
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    facility: '',
+    priorityFocus: 'Port & Terminal Operations Intelligence',
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const payload = {
+        ...formData,
+        formType: 'harbortwin',
+        submittedAt: new Date().toISOString(),
+        pageUrl: typeof window !== 'undefined' ? window.location.href : 'https://uminato.com/harbortwin',
+      };
+
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+      const targetEndpoint = scriptUrl || '/api/contact';
+
+      const response = await fetch(targetEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || data.result === 'error' || data.status === 'error') {
+        throw new Error(data.error || data.message || 'Failed to submit discovery request.');
+      }
+
+      setFormSubmitted(true);
+      setFormData({
+        fullName: '',
+        email: '',
+        facility: '',
+        priorityFocus: 'Port & Terminal Operations Intelligence',
+      });
+    } catch (err: unknown) {
+      setErrorMessage(
+        err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const filteredCapabilities = filterCategory === 'all' 
     ? CAPABILITIES 
@@ -630,56 +694,90 @@ export default function HarborTwinOnePager() {
                   Receive a custom capability mapping and proof-of-value blueprint for your port or terminal facility.
                 </p>
 
+                {errorMessage && (
+                  <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setFormSubmitted(true);
-                  }}
+                  onSubmit={handleFormSubmit}
                   className="space-y-4"
                 >
                   <div>
-                    <label className="block text-xs font-mono text-t2 uppercase mb-1">Full Name</label>
+                    <label className="block text-xs font-mono text-t2 uppercase mb-1">
+                      Full Name <span className="text-sky-base">*</span>
+                    </label>
                     <input
                       required
                       type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
                       placeholder="e.g. Captain Alex Morgan"
                       className="w-full bg-[#050D1A] border border-bd-subtle focus:border-sky-base rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-t2 uppercase mb-1">Corporate Email</label>
+                    <label className="block text-xs font-mono text-t2 uppercase mb-1">
+                      Corporate Email <span className="text-sky-base">*</span>
+                    </label>
                     <input
                       required
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="alex.morgan@portauthority.com"
                       className="w-full bg-[#050D1A] border border-bd-subtle focus:border-sky-base rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-t2 uppercase mb-1">Port / Terminal Facility</label>
+                    <label className="block text-xs font-mono text-t2 uppercase mb-1">
+                      Port / Terminal Facility <span className="text-sky-base">*</span>
+                    </label>
                     <input
                       required
                       type="text"
+                      name="facility"
+                      value={formData.facility}
+                      onChange={handleInputChange}
                       placeholder="e.g. Gateway Container Terminal"
                       className="w-full bg-[#050D1A] border border-bd-subtle focus:border-sky-base rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-mono text-t2 uppercase mb-1">Primary Priority Focus</label>
-                    <select className="w-full bg-[#050D1A] border border-bd-subtle focus:border-sky-base rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                      <option>Port &amp; Terminal Operations Intelligence</option>
-                      <option>Asset Reliability &amp; Predictive Maintenance</option>
-                      <option>AI Vision &amp; CCTV Safety Analytics</option>
-                      <option>Sustainability &amp; Shore Power Decarbonization</option>
-                      <option>3D Spatial Digital Twin &amp; Simulation</option>
-                      <option>GenAI &amp; Agentic Operations</option>
+                    <select
+                      name="priorityFocus"
+                      value={formData.priorityFocus}
+                      onChange={handleInputChange}
+                      className="w-full bg-[#050D1A] border border-bd-subtle focus:border-sky-base rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
+                    >
+                      <option value="Port & Terminal Operations Intelligence">Port &amp; Terminal Operations Intelligence</option>
+                      <option value="Asset Reliability & Predictive Maintenance">Asset Reliability &amp; Predictive Maintenance</option>
+                      <option value="AI Vision & CCTV Safety Analytics">AI Vision &amp; CCTV Safety Analytics</option>
+                      <option value="Sustainability & Shore Power Decarbonization">Sustainability &amp; Shore Power Decarbonization</option>
+                      <option value="3D Spatial Digital Twin & Simulation">3D Spatial Digital Twin &amp; Simulation</option>
+                      <option value="GenAI & Agentic Operations">GenAI &amp; Agentic Operations</option>
                     </select>
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-lg transition-all shadow-[0_0_20px_rgba(74,184,232,0.35)] mt-4 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-lg transition-all shadow-[0_0_20px_rgba(74,184,232,0.35)] mt-4 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Submit Discovery Request
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4 text-t-inv" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                        </svg>
+                        <span>Submitting Request...</span>
+                      </>
+                    ) : (
+                      <span>Submit Discovery Request</span>
+                    )}
                   </button>
                 </form>
               </div>

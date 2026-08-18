@@ -41,18 +41,28 @@ export default function ContactPage() {
     setFeedbackMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const payload = {
+        ...formData,
+        formType: 'contact',
+        submittedAt: new Date().toISOString(),
+        pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+      };
+
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+      const targetEndpoint = scriptUrl || '/api/contact';
+
+      const response = await fetch(targetEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit form.');
+      if (!response.ok || data.result === 'error' || data.status === 'error') {
+        throw new Error(data.error || data.message || 'Failed to submit form.');
       }
 
       setStatus('success');
