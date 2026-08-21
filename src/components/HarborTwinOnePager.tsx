@@ -308,21 +308,16 @@ export default function HarborTwinOnePager() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-7 py-3.5 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-xl transition-all shadow-[0_0_30px_rgba(74,184,232,0.35)] hover:shadow-[0_0_40px_rgba(74,184,232,0.5)] flex items-center gap-2 group cursor-pointer"
+                <a
+                  href="https://bookings.cloud.microsoft/book/HarborTwinDiscoveryMeet@uminatogroup.com/?ismsaljsauthenabled"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-7 py-3.5 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-xl transition-all shadow-[0_0_30px_rgba(74,184,232,0.35)] hover:shadow-[0_0_40px_rgba(74,184,232,0.5)] flex items-center gap-2 group cursor-pointer inline-flex"
                 >
                   <Send size={15} />
                   <span>Schedule Executive Briefing</span>
                   <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-
-                <Link
-                  href="/contact"
-                  className="px-6 py-3.5 bg-bg-card/80 hover:bg-bg-raised border border-bd-default hover:border-sky-base/50 text-t1 hover:text-white font-display font-semibold text-sm rounded-xl transition-all backdrop-blur-md flex items-center gap-2"
-                >
-                  <span>Request Technical Specs</span>
-                </Link>
+                </a>
               </div>
 
               {/* Verified Features Checklist */}
@@ -421,56 +416,8 @@ export default function HarborTwinOnePager() {
         </div>
       </section>
 
-      {/* ── Section: Platform Architecture & Technology Core ── */}
-      <section className="py-24 border-b border-bd-subtle/70 bg-[#080F1E]/80 relative">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-base/10 border border-sky-base/20 text-sky-light text-xs font-mono uppercase tracking-widest font-semibold mb-4">
-              <Building2 size={13} />
-              <span>Enterprise Architecture</span>
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              The Modern Port Intelligence Stack
-            </h2>
-            <p className="text-t2 font-body text-base leading-relaxed">
-              HarborTwin wraps around your existing port infrastructure without requiring costly hardware rip-and-replace, harmonizing siloed systems into an autonomous operational loop.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {ARCHITECTURE_PILLARS.map((pillar, idx) => {
-              const Icon = pillar.icon;
-              return (
-                <div 
-                  key={idx}
-                  className="bg-bg-card border border-bd-default rounded-2xl p-8 relative flex flex-col justify-between hover:border-sky-base/40 transition-all duration-300 shadow-xl group"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-bg-deep border border-bd-subtle text-sky-base flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-sky-base/40 transition-all">
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-t2 font-body text-sm leading-relaxed mb-6">
-                      {pillar.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-bd-subtle/80 flex items-center gap-2 text-xs font-mono text-sky-base/80">
-                    <span>LAYER 0{idx + 1} ARCHITECTURE</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
       {/* ── Section: 8 Core Capability Modules (Full Showcase) ── */}
-      <section className="py-24 border-b border-bd-subtle/70 relative">
+      <section className="py-24 border-b border-bd-subtle/70 bg-[#080F1E]/80 relative">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
           
           {/* Section Header with Category Filter */}
@@ -576,6 +523,54 @@ export default function HarborTwinOnePager() {
         </div>
       </section>
 
+      {/* ── Section: Platform Architecture & Technology Core ── */}
+      <section className="py-24 border-b border-bd-subtle/70 relative">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-base/10 border border-sky-base/20 text-sky-light text-xs font-mono uppercase tracking-widest font-semibold mb-4">
+              <Building2 size={13} />
+              <span>Enterprise Architecture</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              The Modern Port Intelligence Stack
+            </h2>
+            <p className="text-t2 font-body text-base leading-relaxed">
+              HarborTwin wraps around your existing port infrastructure without requiring costly hardware rip-and-replace, harmonizing siloed systems into an autonomous operational loop.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {ARCHITECTURE_PILLARS.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div 
+                  key={idx}
+                  className="bg-bg-card border border-bd-default rounded-2xl p-8 relative flex flex-col justify-between hover:border-sky-base/40 transition-all duration-300 shadow-xl group"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-bg-deep border border-bd-subtle text-sky-base flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-sky-base/40 transition-all">
+                      <Icon size={24} />
+                    </div>
+                    <h3 className="font-display font-bold text-xl text-white mb-3">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-t2 font-body text-sm leading-relaxed mb-6">
+                      {pillar.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-bd-subtle/80 flex items-center gap-2 text-xs font-mono text-sky-base/80">
+                    <span>LAYER 0{idx + 1} ARCHITECTURE</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
       {/* ── Section: Strategic Differentiators ("Why HarborTwin") ── */}
       <section className="py-24 border-b border-bd-subtle/70 bg-[#080F1E]/60 relative">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
@@ -594,13 +589,15 @@ export default function HarborTwinOnePager() {
               </p>
             </div>
 
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href="https://bookings.cloud.microsoft/book/HarborTwinDiscoveryMeet@uminatogroup.com/?ismsaljsauthenabled"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-bg-surface hover:bg-sky-base hover:text-t-inv border border-bd-default rounded-xl text-xs font-bold font-display transition-all cursor-pointer"
             >
               <span>Request Capability Matrix</span>
               <ChevronRight size={14} />
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -651,20 +648,15 @@ export default function HarborTwinOnePager() {
               </p>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-8 py-4 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-xl transition-all shadow-[0_0_30px_rgba(74,184,232,0.4)] flex items-center gap-2 cursor-pointer"
+                <a
+                  href="https://bookings.cloud.microsoft/book/HarborTwinDiscoveryMeet@uminatogroup.com/?ismsaljsauthenabled"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-sky-base hover:bg-sky-light text-t-inv font-display font-bold text-sm rounded-xl transition-all shadow-[0_0_30px_rgba(74,184,232,0.4)] flex items-center gap-2 cursor-pointer inline-flex"
                 >
                   <Send size={16} />
                   <span>Book Executive Workshop</span>
-                </button>
-                
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-bg-raised border border-bd-default hover:border-sky-base/50 text-white hover:text-sky-light font-display font-bold text-sm rounded-xl transition-all"
-                >
-                  Contact Maritime Advisory
-                </Link>
+                </a>
               </div>
             </div>
           </div>
